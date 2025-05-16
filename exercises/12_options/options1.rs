@@ -4,6 +4,27 @@
 // `hour_of_day` is higher than 23.
 fn maybe_icecream(hour_of_day: u16) -> Option<u16> {
     // TODO: Complete the function body.
+    
+    // TODO: When to use match and when not to use match?
+    /*
+     * Use if else for simple bool conds with a few cases and no pattern matching 
+     * Use match for enums, pattern matching, distinct cases, or printing 
+     * Match requires returning the same type, which you can do with Option<T> too
+     */
+
+    /* match hour_of_day { // TODO: Test this ! 
+        0..21 => Some(5),
+        22 | 23 => Some(0),
+        _ => None,
+    } */
+
+    if hour_of_day > 23 {
+        None
+    } else if hour_of_day < 22 {
+        Some(5)
+    } else {
+        Some(0)
+    }
 }
 
 fn main() {
@@ -18,7 +39,7 @@ mod tests {
     fn raw_value() {
         // TODO: Fix this test. How do you get the value contained in the
         // Option?
-        let icecreams = maybe_icecream(12);
+        let icecreams = maybe_icecream(12).unwrap(); // unwrap() returns the value isndie Some() or panics if None.
 
         assert_eq!(icecreams, 5); // Don't change this line.
     }

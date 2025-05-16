@@ -5,7 +5,7 @@ mod sausage_factory {
         String::from("Ginger")
     }
 
-    fn make_sausage() {
+    pub fn make_sausage() { // a public function can call a private one since they are in the same mod.
         get_secret_recipe();
         println!("sausage!");
     }

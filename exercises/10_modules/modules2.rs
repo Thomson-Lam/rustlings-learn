@@ -5,6 +5,12 @@ mod delicious_snacks {
     // TODO: Add the following two `use` statements after fixing them.
     // use self::fruits::PEAR as ???;
     // use self::veggies::CUCUMBER as ???;
+    
+    // use is for bringing items into scope
+    pub use self::fruits::PEAR as fruit; // self is used to refer current mod or sub mod 
+    pub use self::veggies::CUCUMBER as veggie;
+
+    // NOTE: You can attach the pub keyword to use self that brings an item from the current mod or sub mod into scope
 
     mod fruits {
         pub const PEAR: &str = "Pear";
@@ -15,6 +21,7 @@ mod delicious_snacks {
         pub const CUCUMBER: &str = "Cucumber";
         pub const CARROT: &str = "Carrot";
     }
+
 }
 
 fn main() {
